@@ -1,2 +1,2 @@
 # App_QuanLyBaoTriMayMoc
-TKKTPM, Java, Android, JWT
+TKKTPM, TS, NestJs, Android, JWT
