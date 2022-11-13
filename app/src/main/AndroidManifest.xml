@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DHKTPM15A_Nhom12_QLBaoTriMayMoc">
         <activity
+            android:name=".activity.SigUp"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SigIn"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

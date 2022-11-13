@@ -5,7 +5,11 @@
       <map>
         <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/drawable-v24/background_welcome.xml" value="0.1225" />
         <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/drawable-v24/btn_getstart.xml" value="0.1225" />
+        <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/drawable-v24/btn_signin_signup.xml" value="0.101" />
+        <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/drawable-v24/edittext_signin.xml" value="0.101" />
         <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/layout/activity_main.xml" value="0.16145833333333334" />
+        <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/layout/activity_sig_in.xml" value="0.16666666666666666" />
+        <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/layout/activity_sig_up.xml" value="0.13796296296296295" />
       </map>
     </option>
   </component>
