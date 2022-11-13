@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/drawable-v24/background_welcome.xml" value="0.1225" />
+        <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/drawable-v24/btn_getstart.xml" value="0.1225" />
         <entry key="..\:/TKPM/BTL/App_QL_BaoTriMayMoc/app/src/main/res/layout/activity_main.xml" value="0.16145833333333334" />
       </map>
     </option>
