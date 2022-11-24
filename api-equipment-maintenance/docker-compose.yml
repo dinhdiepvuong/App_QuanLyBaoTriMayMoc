@@ -1,0 +1,45 @@
+version: '3'
+networks:
+  app-tier:
+    driver: bridge
+volumes:
+  iman-pgdata:
+  redis_data:
+services:
+  iman_postgres_local:
+    container_name: postgres_local
+    image: postgres:11
+    ports:
+      - "8201:5432"
+    volumes:
+      - iman-pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+      PG_DATA: /var/lib/postgresql/data
+    networks:
+      - app-tier
+  adminer:
+    container_name: adminer_local
+    image: adminer
+    depends_on:
+      - iman_postgres_local
+    restart: always
+    ports:
+      - 8202:8080
+    networks:
+      - app-tier
+  iman_redis:
+    container_name: redis
+    image: 'bitnami/redis:latest'
+    volumes:
+      - redis_data:/bitnami/redis/data
+    env_file:
+      - .env
+    ports:
+      - 8203:6379
+    networks:
+      - app-tier
