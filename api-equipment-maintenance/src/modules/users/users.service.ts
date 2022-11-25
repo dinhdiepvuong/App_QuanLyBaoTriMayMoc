@@ -35,7 +35,6 @@ export class UsersService {
     	});
 
     	if (!userInDb) {
-			if (registerDto.isEmployee == "true") {
 				const userDto: CreateUserDto = {
 					email: registerDto.email,
 					password: registerDto.password,
@@ -50,22 +49,6 @@ export class UsersService {
 					return new ResponseCommon(201, true, 'CREATE_SUCCESS', resultInDb);
 				}
 				return new ResponseCommon(500, false, 'SERVER_ERROR', null);
-			} else {
-				const userDto: CreateUserDto = {
-					email: registerDto.email,
-					password: registerDto.password,
-					status: UserStatus.NEW,
-					role: UserRole.CUSTOMER,
-					createdBy: registerDto.firstName + ' ' + registerDto.lastName,
-				};
-				const resultInDb = await this.userRepository.create(userDto);
-				await this.userRepository.save(resultInDb);
-	
-				if (resultInDb) {
-					return new ResponseCommon(201, true, 'CREATE_SUCCESS', resultInDb);
-				}
-				return new ResponseCommon(500, false, 'SERVER_ERROR', null);
-			}
 
     	}
     	return new ResponseCommon(400, false, 'EMAIL_ALREADY_EXIST', null);
@@ -106,7 +89,6 @@ export class UsersService {
   	async getUserProfile(userId: string): Promise<IResponse> {
 		let queryBuilder = await this.userRepository.createQueryBuilder('user')
 									.leftJoinAndSelect("user.employee", "employee")
-									.leftJoinAndSelect("user.customer", "customer")
 									.where("user.id = :userId", { userId })
 									.getOne(); 
 		if (!queryBuilder) {
@@ -215,7 +197,6 @@ export class UsersService {
 		let queryBuilder = this.userRepository
 			.createQueryBuilder('user')
 			.leftJoinAndSelect("user.employee", "employee")
-			.leftJoinAndSelect("user.customer", "customer")
 			.where('user.is_delete = false')
 
 		if (!propsGet.isDropdown) {
